@@ -16,6 +16,22 @@ const webpackConfigDev = {
         filename: 'bundle.js',
         publicPath: '/js'
     },
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            use: [
+                "style-loader",
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true,
+                        localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                    }
+                },
+                "sass-loader"
+            ]
+        }]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: 'src/index.ejs',
