@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import '../../scss/checkbox.scss';
 interface CheckBoxProps {
     label: string;
 }
@@ -23,9 +23,9 @@ class CheckBox extends Component<CheckBoxProps, CheckBoxState> {
         const {label} = this.props;
 
         return (
-            <div>
-                <label>{label}</label>
+            <div className={'checkbox'}>
                 <input type="checkbox" id={label} onChange={this.handleChangeState}/>
+                <label>{label}</label>
             </div>
         );
     }

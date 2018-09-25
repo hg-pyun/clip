@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import '../../scss/textfield.scss';
 
-class TextField extends Component {
+interface TextFieldProps {
+}
+
+interface TextFieldState {
+}
+
+class TextField extends Component<TextFieldProps, TextFieldState> {
 
     constructor(props){
         super(props);
@@ -8,7 +15,10 @@ class TextField extends Component {
 
     render() {
         return (
-            <TextField/>
+            <div>
+                <h1>Command</h1>
+                <textarea/>
+            </div>
         )
     }
 }

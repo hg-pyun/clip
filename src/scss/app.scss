@@ -1,0 +1,38 @@
+$globalWidth: 500px;
+
+.wrap {
+  .header {
+    width: $globalWidth;
+    margin: 50px auto;
+    text-align: center;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
+  }
+
+  .dashboard {
+    width: $globalWidth;
+    margin: 50px auto;
+
+    .package {
+      .name {
+        font-size: 15px;
+        margin: 10px 0;
+      }
+
+      ul {
+        width: $globalWidth;
+        height: 75px;
+        li {
+          float: left;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}

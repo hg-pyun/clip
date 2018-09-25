@@ -7,7 +7,7 @@ import WebpackPackage from '../models/WebpackPackage';
 import ReactPackage from '../models/ReactPackage';
 import VuePAckage from '../models/VuePackage';
 
-import '../../css/index.scss';
+import '../../scss/app.scss';
 
 interface AppProps {
 }
@@ -36,31 +36,32 @@ class App extends Component<AppProps, AppState> {
         };
 
         return (
-            <div>
-                <div>
+            <div className={'wrap'}>
+                <div className={'header'}>
                     <h1>Rapid Installer</h1>
-                    <p>Generate module install command, Easily</p>
+                    <h3>Generate module install command, Easily</h3>
                 </div>
-                <div>
-                    <div>
-                        <div>Babel</div>
+                <div className={'dashboard'}>
+                    <div className={'package'}>
+                        <h2 className={'name'}>Babel</h2>
                         <ul>{renderCheckBoxList(this.state.packages.babel)}</ul>
                     </div>
-                    <div>
-                        <div>Webpack</div>
+                    <div  className={'package'}>
+                        <h2 className={'name'}>Webpack</h2>
                         <ul>{renderCheckBoxList(this.state.packages.webpack)}</ul>
                     </div>
-                    <div>
-                        <div>React</div>
+                    <div  className={'package'}>
+                        <h2 className={'name'}>React</h2>
                         <ul>{renderCheckBoxList(this.state.packages.react)}</ul>
                     </div>
-                    <div>
-                        <div>Vue</div>
+                    <div  className={'package'}>
+                        <h2 className={'name'}>Vue</h2>
                         <ul>{renderCheckBoxList(this.state.packages.vue)}</ul>
                     </div>
-                </div>
-                <div>
-                    result area
+
+                    <div>
+                        <TextField/>
+                    </div>
                 </div>
             </div>
         )
