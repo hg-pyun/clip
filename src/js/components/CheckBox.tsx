@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import '../../scss/checkbox.scss';
 interface CheckBoxProps {
     label: string;
+    handleChangeCheckbox(e: any): void;
 }
 
 interface CheckBoxState {
@@ -9,22 +10,12 @@ interface CheckBoxState {
 }
 
 class CheckBox extends Component<CheckBoxProps, CheckBoxState> {
-    state = {
-        isChecked: false
-    };
-
-    handleChangeState = (): void => {
-        this.setState({
-            isChecked: !this.state.isChecked
-        })
-    };
-
     render() {
-        const {label} = this.props;
+        const {label, handleChangeCheckbox} = this.props;
 
         return (
             <div className={'checkbox'}>
-                <input type="checkbox" id={label} onChange={this.handleChangeState}/>
+                <input type="checkbox" name={label} onChange={handleChangeCheckbox}/>
                 <label>{label}</label>
             </div>
         );

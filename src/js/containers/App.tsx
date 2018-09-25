@@ -13,28 +13,45 @@ interface AppProps {
 }
 
 interface AppState {
-    packages: object
+    packages: object;
+    checkedItems: any;
 }
 
 class App extends Component<AppProps, AppState> {
     state = {
         packages: {
-            babel:  BabelPackage.getAllPackages(),
+            babel: BabelPackage.getAllPackages(),
             webpack: WebpackPackage.getAllPackages(),
             react: ReactPackage.getAllPackages(),
             vue: VuePAckage.getAllPackages(),
-        }
+        },
+        checkedItems: new Map()
+    };
+
+    handleChangeCheckbox = (e) => {
+        const item = e.target.name;
+        const isChecked = e.target.checked;
+        this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+    };
+
+    renderCheckBoxList = (list) => {
+        return (<ul>
+            {list.map((module) => {
+                return (<li key={module}><CheckBox label={module} handleChangeCheckbox={this.handleChangeCheckbox}/></li>);
+            })}
+        </ul>)
+    };
+
+    renderCommands = (checkedItems): string => {
+        let commands = 'npm install --save-dev ';
+        checkedItems.forEach((value, key) => {
+            if(value) commands += `${key} `;
+        });
+
+        return commands;
     };
 
     render() {
-        const renderCheckBoxList = (list) => {
-            return list.map((module) => {
-                return (<li key={module}>
-                    <CheckBox label={module} />
-                </li>)
-            })
-        };
-
         return (
             <div className={'wrap'}>
                 <div className={'header'}>
@@ -44,23 +61,23 @@ class App extends Component<AppProps, AppState> {
                 <div className={'dashboard'}>
                     <div className={'package'}>
                         <h2 className={'name'}>Babel</h2>
-                        <ul>{renderCheckBoxList(this.state.packages.babel)}</ul>
+                        {this.renderCheckBoxList(this.state.packages.babel)}
                     </div>
-                    <div  className={'package'}>
+                    <div className={'package'}>
                         <h2 className={'name'}>Webpack</h2>
-                        <ul>{renderCheckBoxList(this.state.packages.webpack)}</ul>
+                        {this.renderCheckBoxList(this.state.packages.webpack)}
                     </div>
-                    <div  className={'package'}>
+                    <div className={'package'}>
                         <h2 className={'name'}>React</h2>
-                        <ul>{renderCheckBoxList(this.state.packages.react)}</ul>
+                        {this.renderCheckBoxList(this.state.packages.react)}
                     </div>
-                    <div  className={'package'}>
+                    <div className={'package'}>
                         <h2 className={'name'}>Vue</h2>
-                        <ul>{renderCheckBoxList(this.state.packages.vue)}</ul>
+                        {this.renderCheckBoxList(this.state.packages.vue)}
                     </div>
 
                     <div>
-                        <TextField/>
+                        <TextField value={this.renderCommands(this.state.checkedItems)}/>
                     </div>
                 </div>
             </div>
