@@ -8,6 +8,7 @@ const merge = require('webpack-merge');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const webpackConfigCommon = require('./webpack.config.common');
 
@@ -19,7 +20,17 @@ const webpackConfigProd = {
     mode: 'production',
     output: {
         filename: jsFilename,
-        path: path.resolve(__dirname, '../dist/js')
+        path: path.resolve(__dirname, '../dist/js/')
+    },
+    module: {
+        rules: [{
+            test: /\.scss$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                "sass-loader"
+            ]
+        }]
     },
     plugins: [
         new CleanWebpackPlugin(['../dist'], {
@@ -31,9 +42,12 @@ const webpackConfigProd = {
             filename: '../index.html',
             inject: false,
             staticResources: {
-                js: `/js/${jsFilename}`,
-                css: `/css/${cssFilename}`
+                js: `js/${jsFilename}`,
+                css: `css/${cssFilename}`
             }
+        }),
+        new MiniCssExtractPlugin({
+            filename: `../css/${cssFilename}`,
         })
     ]
 };
