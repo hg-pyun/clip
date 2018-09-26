@@ -10,13 +10,14 @@ interface CheckBoxState {
 }
 
 class CheckBox extends Component<CheckBoxProps, CheckBoxState> {
+
     render() {
         const {label, handleChangeCheckbox} = this.props;
 
         return (
             <div className={'checkbox'}>
-                <input type="checkbox" name={label} onChange={handleChangeCheckbox}/>
-                <label>{label}</label>
+                <input type="checkbox" id={label} name={label} onChange={handleChangeCheckbox}/>
+                <label className={'no-select'} htmlFor={label}>{label}</label>
             </div>
         );
     }

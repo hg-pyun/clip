@@ -48,7 +48,7 @@ class App extends Component<AppProps, AppState> {
             if(value) commands += `${key} `;
         });
 
-        return commands;
+        return commands.trimRight();
     };
 
     render() {
