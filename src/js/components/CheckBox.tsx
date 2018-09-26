@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import '../../scss/checkbox.scss';
+
 interface CheckBoxProps {
     label: string;
     handleChangeCheckbox(e: any): void;
