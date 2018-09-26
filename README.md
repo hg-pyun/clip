@@ -1,2 +1,2 @@
-# rapid-installer
-Generate module install command, Easily.
+# Rapidity
+Build up your project, Rapidly.

@@ -55,8 +55,8 @@ class App extends Component<AppProps, AppState> {
         return (
             <div className={'wrap'}>
                 <div className={'header'}>
-                    <h1>Rapid Installer</h1>
-                    <h3>Generate module install command, Easily</h3>
+                    <h1>Rapidity</h1>
+                    <h3>Build up your project, Rapidly</h3>
                 </div>
                 <div className={'dashboard'}>
                     <div className={'package'}>
