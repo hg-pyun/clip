@@ -5,7 +5,7 @@ import CheckBox from '../components/CheckBox';
 import BabelPackage from '../models/BabelPackage';
 import WebpackPackage from '../models/WebpackPackage';
 import ReactPackage from '../models/ReactPackage';
-import VuePAckage from '../models/VuePackage';
+import VuePackage from '../models/VuePackage';
 
 import '../../scss/app.scss';
 
@@ -23,7 +23,7 @@ class App extends Component<AppProps, AppState> {
             babel: BabelPackage.getAllPackages(),
             webpack: WebpackPackage.getAllPackages(),
             react: ReactPackage.getAllPackages(),
-            vue: VuePAckage.getAllPackages(),
+            vue: VuePackage.getAllPackages(),
         },
         checkedItems: new Map()
     };
