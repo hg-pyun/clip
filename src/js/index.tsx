@@ -5,7 +5,7 @@ import App from './containers/App';
 import '../scss/index.scss';
 
 render(
-    <Router>
+    <Router basename='/rapidity'>
         <App/>
     </Router>,
     document.getElementById('root')
