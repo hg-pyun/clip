@@ -48,6 +48,11 @@ const webpackConfigDev = {
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000
+        },
+        historyApiFallback: {
+            rewrites: [
+                { from: /.*/g, to: '/index.html' }
+            ]
         }
     },
 
