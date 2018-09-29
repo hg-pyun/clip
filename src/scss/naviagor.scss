@@ -1,0 +1,35 @@
+$height: 64px;
+
+header {
+  &.nav-wrap {
+    position: sticky;
+    display: flex;
+    height: $height;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.03);
+
+    .nav-logo {
+      width: 100px;
+      line-height: $height;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .nav-list {
+      box-sizing: border-box;
+      ul {
+        display: flex;
+        flex-direction: row;
+        li {
+          display: list-item;
+          width: 75px;
+          height: $height;
+          line-height: $height;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
