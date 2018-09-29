@@ -24,7 +24,7 @@ class Navigator extends Component<NavigatorProps, NavigatorState> {
                 <div className={'nav-list'}>
                     <ul>
                         <li><Link to={'/installer'}>Installer</Link></li>
-                        <li><Link to={'/configer'}>Configer</Link></li>
+                        <li><Link to={'/configurator'}>Configurator</Link></li>
                     </ul>
                 </div>
             </header>

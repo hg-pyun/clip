@@ -5,7 +5,7 @@ import CheckBox from '../components/CheckBox';
 import BabelPackage from '../models/BabelPackage';
 import WebpackPackage from '../models/WebpackPackage';
 import ReactPackage from '../models/ReactPackage';
-import VuePAckage from '../models/VuePackage';
+import VuePackage from '../models/VuePackage';
 
 import '../../scss/installer.scss';
 
@@ -23,7 +23,7 @@ class Installer extends Component<InstallerProps, InstallerState> {
             babel: BabelPackage.getAllPackages(),
             webpack: WebpackPackage.getAllPackages(),
             react: ReactPackage.getAllPackages(),
-            vue: VuePAckage.getAllPackages(),
+            vue: VuePackage.getAllPackages(),
         },
         checkedItems: new Map()
     };
@@ -55,7 +55,7 @@ class Installer extends Component<InstallerProps, InstallerState> {
         return (
             <div className={'wrap'}>
                 <div className={'dashboard'}>
-                    <div className={'package'}>
+                    <div className={'package babel'}>
                         <h2 className={'name'}>Babel</h2>
                         {this.renderCheckBoxList(this.state.packages.babel)}
                     </div>

@@ -4,7 +4,7 @@ import {Route} from 'react-router-dom';
 import Home from './Home';
 import Navigator from './Navigator';
 import Installer from './Installer';
-import Configer from './Configer';
+import Configurator from './Configurator';
 
 interface AppProps {
 }
@@ -20,7 +20,7 @@ class App extends Component<AppProps, AppState> {
                 <Navigator/>
                 <Route exact path='/' component={Home}/>
                 <Route path='/installer' component={Installer}/>
-                <Route path='/configer' component={Configer}/>
+                <Route path='/configurator' component={Configurator}/>
             </>
         )
     }

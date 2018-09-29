@@ -7,7 +7,7 @@ interface ConfigerState {
 }
 
 
-class Configer extends Component<ConfigerProps, ConfigerState> {
+class Configurator extends Component<ConfigerProps, ConfigerState> {
 
     constructor(props) {
         super(props);
@@ -16,10 +16,10 @@ class Configer extends Component<ConfigerProps, ConfigerState> {
     render() {
         return (
             <div>
-                this is Configer
+                this is Configurator
             </div>
         );
     }
 }
 
-export default Configer;
+export default Configurator;

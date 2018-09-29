@@ -6,6 +6,9 @@ $globalWidth: 500px;
     margin: 50px auto;
 
     .package {
+      &.babel {
+        height: 500px;
+      }
       .name {
         font-size: 15px;
         margin: 10px 0;
