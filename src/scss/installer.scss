@@ -1,27 +1,28 @@
-$globalWidth: 500px;
+.install-wrap {
+  width: 800px;
+  margin: 50px auto 100px;
 
-.wrap {
   .dashboard {
-    width: $globalWidth;
-    margin: 50px auto;
+    display: flex;
 
     .package {
-      &.babel {
-        height: 500px;
-      }
+      height: 600px;
+      overflow: hidden;
+      overflow-y: scroll;
       .name {
         font-size: 15px;
         margin: 10px 0;
       }
 
       ul {
-        width: $globalWidth;
-        height: 75px;
         li {
-          float: left;
           margin-left: 5px;
         }
       }
     }
+  }
+
+  .command-box {
+    margin-top: 25px;
   }
 }

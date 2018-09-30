@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import '../../scss/naviagor.scss';
+import '../../scss/naviagtor.scss';
 
 interface NavigatorProps {
 }
