@@ -1,8 +1,11 @@
 import Package from './interfaces/Package';
 
 class BabelPackage implements Package {
-    public readonly packages: Array<string> = [
+    private defaultPackages: Array<string> = [
         'cli', 'core', 'preset-env',
+    ];
+
+    private plugins: Array<string> = [
         'plugin-proposal-async-generator-functions',
         'plugin-proposal-dotall-regex',
         'plugin-proposal-object-rest-spread',
@@ -23,8 +26,10 @@ class BabelPackage implements Package {
         'plugin-proposal-throw-expressions'
     ];
 
+
+
     getAllPackages(): Array<string> {
-        return this.packages.map((pkg) => this.attachPrefix(pkg));
+        return this.defaultPackages.concat(this.plugins).map((pkg) => this.attachPrefix(pkg));
     }
 
     attachPrefix(pkg: string): string {

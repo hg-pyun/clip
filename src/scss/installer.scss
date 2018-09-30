@@ -1,24 +1,15 @@
-$globalWidth: 500px;
-
 .wrap {
   .dashboard {
-    width: $globalWidth;
-    margin: 50px auto;
+    display: flex;
 
     .package {
-      &.babel {
-        height: 500px;
-      }
       .name {
         font-size: 15px;
         margin: 10px 0;
       }
 
       ul {
-        width: $globalWidth;
-        height: 75px;
         li {
-          float: left;
           margin-left: 5px;
         }
       }

@@ -1,10 +1,18 @@
 import Package from './interfaces/Package';
 
 class ReactPackage implements Package {
-    public readonly packages: Array<string> = ['react', 'react-dom', 'redux', 'react-router'];
+    private defaultPackages: Array<string> = [
+        'react',
+        'react-dom',
+        'redux',
+        'redux-thunk',
+        'redux-saga',
+        'redux-observable',
+        'react-router-dom'
+    ];
 
     getAllPackages(): Array<string> {
-        return this.packages;
+        return this.defaultPackages;
     }
 }
 

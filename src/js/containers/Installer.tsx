@@ -55,7 +55,7 @@ class Installer extends Component<InstallerProps, InstallerState> {
         return (
             <div className={'wrap'}>
                 <div className={'dashboard'}>
-                    <div className={'package babel'}>
+                    <div className={'package'}>
                         <h2 className={'name'}>Babel</h2>
                         {this.renderCheckBoxList(this.state.packages.babel)}
                     </div>
@@ -71,10 +71,9 @@ class Installer extends Component<InstallerProps, InstallerState> {
                         <h2 className={'name'}>Vue</h2>
                         {this.renderCheckBoxList(this.state.packages.vue)}
                     </div>
-
-                    <div>
-                        <TextField value={this.renderCommands(this.state.checkedItems)}/>
-                    </div>
+                </div>
+                <div>
+                    <TextField value={this.renderCommands(this.state.checkedItems)}/>
                 </div>
             </div>
         )
