@@ -1,0 +1,17 @@
+.configurator-wrap {
+  width: 100%;
+
+  .half {
+    width: 50%;
+    float:left;
+    height: 100vh;
+  }
+
+  .package-json {
+    background-color: dimgrey;
+  }
+
+  .module-config {
+    background-color: white;
+  }
+}

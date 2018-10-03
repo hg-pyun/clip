@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
+import '../../scss/configurator.scss';
 
 interface ConfigerProps {
 }
 
 interface ConfigerState {
 }
-
 
 class Configurator extends Component<ConfigerProps, ConfigerState> {
 
@@ -15,8 +15,15 @@ class Configurator extends Component<ConfigerProps, ConfigerState> {
 
     render() {
         return (
-            <div>
-                this is Configurator
+            <div className={'configurator-wrap'}>
+                <div className={'package-json half'}>
+                    <p>
+                        Inserted JSON Format
+                    </p>
+                </div>
+                <div className={'module-config half'}>
+                    Result Modules
+                </div>
             </div>
         );
     }
