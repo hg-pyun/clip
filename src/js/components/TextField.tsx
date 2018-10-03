@@ -16,9 +16,12 @@ class TextField extends Component<TextFieldProps, TextFieldState> {
 
     render() {
         return (
-            <div>
+            <div className={'component-textfield'}>
                 <h1>Command</h1>
-                <textarea value={this.props.value} readOnly/>
+                <div className={'area'}>
+                    <textarea value={this.props.value} readOnly/>
+                    <button>Copy</button>
+                </div>
             </div>
         )
     }

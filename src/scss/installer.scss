@@ -1,8 +1,14 @@
-.wrap {
+.install-wrap {
+  width: 800px;
+  margin: 50px auto 100px;
+
   .dashboard {
     display: flex;
 
     .package {
+      height: 600px;
+      overflow: hidden;
+      overflow-y: scroll;
       .name {
         font-size: 15px;
         margin: 10px 0;
@@ -14,5 +20,9 @@
         }
       }
     }
+  }
+
+  .command-box {
+    margin-top: 25px;
   }
 }
