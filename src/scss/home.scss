@@ -1,13 +1,33 @@
 .home-wrap {
-  width: 500px;
-  margin: 250px auto;
+  width: 800px;
+  margin: 50px auto 100px;
   text-align: center;
 
-  h1 {
-    font-size: 50px;
+  .introduce {
+    h1 {
+      margin-top: 30px;
+      font-size: 50px;
+    }
+
+    h3 {
+      font-size: 15px;
+    }
   }
 
-  h3 {
-    font-size: 15px;
+  hr {
+    margin-top: 100px;
+  }
+
+  .description {
+    margin-top: 20px;
+    text-align: left;
+
+    .row {
+      margin-top: 50px;
+
+      h1 {
+        font-size: 30px;
+      }
+    }
   }
 }
