@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "codemirror": "^5.40.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1"
