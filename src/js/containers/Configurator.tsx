@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import CodeMirror from 'codemirror';
+import 'codemirror/mode/javascript/javascript.js';
 import '../../scss/configurator.scss';
-import '../../../node_modules/codemirror/mode/javascript/javascript';
 
 interface ConfigerProps {
 }
