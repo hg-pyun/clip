@@ -1,4 +1,4 @@
-# Rapidity
+# Rapidly
 > Build up your project, Rapidly.  
 
 Rapidity is a generator that quickly install modules or settings needed for a project.
