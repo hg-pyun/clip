@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../../scss/textfield.scss';
 
 interface TextFieldProps {
@@ -10,9 +10,17 @@ interface TextFieldState {
 
 class TextField extends Component<TextFieldProps, TextFieldState> {
 
-    constructor(props){
-        super(props);
-    }
+    handleClickCopyButton = (str) => {
+        const el = document.createElement('textarea');
+        el.value = str;
+        el.setAttribute('readonly', '');
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
+    };
 
     render() {
         return (
@@ -20,7 +28,10 @@ class TextField extends Component<TextFieldProps, TextFieldState> {
                 <h1>Command</h1>
                 <div className={'area'}>
                     <textarea value={this.props.value} readOnly/>
-                    <button>Copy</button>
+                    <button onClick={() => {
+                        this.handleClickCopyButton(this.props.value)
+                    }}>Copy
+                    </button>
                 </div>
             </div>
         )
