@@ -1,4 +1,7 @@
 # Rapidly
+
+[![GitHub license](https://img.shields.io/github/license/hg-pyun/rapidly.svg)](https://github.com/hg-pyun/rapidly/blob/master/LICENSE)
+
 > Install Node Modules, Rapidly.  
 
 Rapidly is a generator that quickly install modules needed for a project.
