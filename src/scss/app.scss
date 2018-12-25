@@ -1,0 +1,17 @@
+.content {
+  height: 500px;
+
+  .sidebar {
+    float: left;
+    width: 30%;
+    height: 1000px;
+    overflow: scroll;
+  }
+
+  .dashboard {
+    float: left;
+    width: 70%;
+    height: 1000px;
+    overflow: scroll;
+  }
+}

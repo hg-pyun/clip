@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import TextField from './components/TextField';
+import CommandBox from './components/CommandBox';
 import CheckBox from './components/CheckBox';
+import Navigator from "./components/Navigator";
 
 import BabelPackage from './models/BabelPackage';
 import WebpackPackage from './models/WebpackPackage';
 import ReactPackage from './models/ReactPackage';
 import VuePackage from './models/VuePackage';
 
-import '../scss/installer.scss';
+import '../scss/app.scss';
 
 interface InstallerProps {
 }
@@ -53,28 +54,37 @@ class App extends Component<InstallerProps, InstallerState> {
 
     render() {
         return (
-            <div className={'install-wrap'}>
-                <div className={'dashboard'}>
-                    <div className={'package'}>
-                        <h2 className={'name'}>Babel</h2>
-                        {this.renderCheckBoxList(this.state.packages.babel)}
+            <div className={'wrap'}>
+                <Navigator />
+                <div className={'content'}>
+                    <div className={'sidebar'}>
+                        <ul>
+                            <li>Babel</li>
+                            <li>Webpack</li>
+                            <li>React</li>
+                            <li>Vue</li>
+                        </ul>
                     </div>
-                    <div className={'package'}>
-                        <h2 className={'name'}>Webpack</h2>
-                        {this.renderCheckBoxList(this.state.packages.webpack)}
-                    </div>
-                    <div className={'package'}>
-                        <h2 className={'name'}>React</h2>
-                        {this.renderCheckBoxList(this.state.packages.react)}
-                    </div>
-                    <div className={'package'}>
-                        <h2 className={'name'}>Vue</h2>
-                        {this.renderCheckBoxList(this.state.packages.vue)}
+                    <div className={'dashboard'}>
+                        <div className={'package'}>
+                            <h2 className={'name'}>Babel</h2>
+                            {this.renderCheckBoxList(this.state.packages.babel)}
+                        </div>
+                        <div className={'package'}>
+                            <h2 className={'name'}>Webpack</h2>
+                            {this.renderCheckBoxList(this.state.packages.webpack)}
+                        </div>
+                        <div className={'package'}>
+                            <h2 className={'name'}>React</h2>
+                            {this.renderCheckBoxList(this.state.packages.react)}
+                        </div>
+                        <div className={'package'}>
+                            <h2 className={'name'}>Vue</h2>
+                            {this.renderCheckBoxList(this.state.packages.vue)}
+                        </div>
                     </div>
                 </div>
-                <div className={'command-box'}>
-                    <TextField value={this.renderCommands(this.state.checkedItems)}/>
-                </div>
+                <CommandBox value={this.renderCommands(this.state.checkedItems)}/>
             </div>
         )
     }

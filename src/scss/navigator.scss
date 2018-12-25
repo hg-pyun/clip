@@ -1,0 +1,15 @@
+.nav-container {
+  width: 100%;
+  height: 56px;
+  background-color: #24252F;
+
+  .logo {
+    display: inline-block;
+    margin-left: 20px;
+    line-height: 56px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+  }
+
+}
