@@ -11,21 +11,23 @@ import VuePackage from './models/VuePackage';
 import '../scss/app.scss';
 
 interface InstallerProps {
+    packages: object;
 }
 
 interface InstallerState {
-    packages: object;
     checkedItems: any;
 }
 
 class App extends Component<InstallerProps, InstallerState> {
+
+    packages = {
+        babel: BabelPackage.getAllPackages(),
+        webpack: WebpackPackage.getAllPackages(),
+        react: ReactPackage.getAllPackages(),
+        vue: VuePackage.getAllPackages()
+    };
+
     state = {
-        packages: {
-            babel: BabelPackage.getAllPackages(),
-            webpack: WebpackPackage.getAllPackages(),
-            react: ReactPackage.getAllPackages(),
-            vue: VuePackage.getAllPackages(),
-        },
         checkedItems: new Map()
     };
 
@@ -33,6 +35,14 @@ class App extends Component<InstallerProps, InstallerState> {
         const item = e.target.name;
         const isChecked = e.target.checked;
         this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(item, isChecked) }));
+    };
+
+    renderCategory = (packages) => {
+        return (<ul>
+            {packages.map((category) => {
+                return (<li key={category}> {category}</li>)
+            })}
+        </ul>)
     };
 
     renderCheckBoxList = (list) => {
@@ -58,29 +68,24 @@ class App extends Component<InstallerProps, InstallerState> {
                 <Navigator />
                 <div className={'content'}>
                     <div className={'sidebar'}>
-                        <ul>
-                            <li>Babel</li>
-                            <li>Webpack</li>
-                            <li>React</li>
-                            <li>Vue</li>
-                        </ul>
+                        {this.renderCategory(Object.keys(this.packages))}
                     </div>
                     <div className={'dashboard'}>
                         <div className={'package'}>
                             <h2 className={'name'}>Babel</h2>
-                            {this.renderCheckBoxList(this.state.packages.babel)}
+                            {this.renderCheckBoxList(this.packages.babel)}
                         </div>
                         <div className={'package'}>
                             <h2 className={'name'}>Webpack</h2>
-                            {this.renderCheckBoxList(this.state.packages.webpack)}
+                            {this.renderCheckBoxList(this.packages.webpack)}
                         </div>
                         <div className={'package'}>
                             <h2 className={'name'}>React</h2>
-                            {this.renderCheckBoxList(this.state.packages.react)}
+                            {this.renderCheckBoxList(this.packages.react)}
                         </div>
                         <div className={'package'}>
                             <h2 className={'name'}>Vue</h2>
-                            {this.renderCheckBoxList(this.state.packages.vue)}
+                            {this.renderCheckBoxList(this.packages.vue)}
                         </div>
                     </div>
                 </div>
